@@ -7,14 +7,19 @@ export default function ContactList(props) {
 	const deleteContactHandler =(id)=>{
 		props.getContactId(id);
 	}
-	
-	const renderContactList = props.contacts.map((contact)=>{
-		return(
-			<ContactCard contact={contact} clickHandler = {deleteContactHandler} key = {contact.id}/>
-		)
-	})
+	console.log("Contacts:", props.contacts);
+	const renderContactList = Array.isArray(props.contacts)
+  ? props.contacts.map((contact) => (
+      <ContactCard
+        contact={contact}
+        clickHandler={deleteContactHandler}
+        key={contact.id}
+      />
+    ))
+  : [];
+  
   return (
-	<div className='main'>
+	<div className='main' style={{ marginTop: "80px" }}>
 		<h2>Contact List
 			<Link to='/add'>
 			<button className='ui button blue right'>Add Contact</button></Link>
