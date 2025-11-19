@@ -21,8 +21,17 @@ function App() {
     const response =await  api.get("/contacts");
     return response.data;
   }
+  // mail already exist
   const addContactHandler =async (contact)=>{
     console.log(contact);
+    const emailExists = contacts.some(
+      (c) => c.email.toLowerCase() === contact.email.toLowerCase()
+    );
+  
+    if (emailExists) {
+      alert("Email already exists in contact list!");
+      return; // stop execution
+    }
     const request = {
       id:uuid(),
       ...contact
