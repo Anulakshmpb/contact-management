@@ -99,7 +99,7 @@ export default class AddContact extends Component {
 
     return (
       <div className="w-full flex justify-center mt-24 px-4">
-        <div className="w-full max-w-lg bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 md:p-10 shadow-xl shadow-black/30 transition-all duration-500">
+        <div className="w-full max-w-lg bg-white/10 backdrop-blur-2xl border border-white/40 rounded-3xl p-8 md:p-10 shadow-xl shadow-black/30 transition-all duration-500">
           <h2 className="text-3xl font-extrabold mb-8 bg-gradient-to-r from-blue-700 to-purple-300 text-transparent bg-clip-text tracking-wide">
             Add Contact
           </h2>
@@ -116,7 +116,7 @@ export default class AddContact extends Component {
                   type="text"
                   name="name"
                   placeholder="Enter Name"
-                  className="w-full p-3 rounded-xl bg-white/20 border border-white/30 text-black placeholder-gray-700 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all duration-300"
+                  className="w-full p-3 rounded-xl bg-white/20 border border-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all duration-300"
                 />
                 {errors.name && (
                   <small className="text-red-400">{errors.name}</small>
@@ -129,7 +129,7 @@ export default class AddContact extends Component {
                   type="email"
                   name="email"
                   placeholder="Enter Email"
-                  className="w-full p-3 rounded-xl bg-white/20 border border-white/30 text-black placeholder-gray-700 focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-300"
+                  className="w-full p-3 rounded-xl bg-white/20 border border-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all duration-300"
                 />
                 {errors.email && (
                   <small className="text-red-400">{errors.email}</small>
