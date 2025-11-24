@@ -1,7 +1,7 @@
 import React from 'react'
 import user from '../Images/user.jpg';
 import { Link } from 'react-router-dom';
-import { FiTrash2, FiEdit2 } from "react-icons/fi";
+import { FiTrash2, FiEdit2,FiEye } from "react-icons/fi";
 export default function ContactCard(props) {
 	const{id,name,email}=props.contact;
   return (
@@ -28,7 +28,11 @@ export default function ContactCard(props) {
 				<Link to="/edit" state={{ contact: props.contact }}
 				className="p-2 rounded-xl hover:bg-blue-500/20 transition-all text-blue-400 hover:text-blue-500 hover:scale-110 ">
 					<FiEdit2 className="text-xl" />
-			</Link>
+			    </Link>
+
+			<Link to={{pathname:`/contact/${id}`}}
+			className="p-2 rounded-xl hover:bg-blue-500/20 transition-all text-yellow-400 hover:text-yellow-700 hover:scale-110 ">
+			<FiEye className="text-xl" /></Link>
 			</div>
   )
 }
